@@ -44,7 +44,7 @@ public class LoginPageobjects extends HomescreenPageobject {
 	@FindBy(xpath = "//p[normalize-space()='Software']")
 	public static WebElement Software;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/section[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "(//input[@name='business-age'])[3]")
 	public static WebElement Ageofbusiness;
 
 }

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-21T13:26:01 IST" name="Default suite" finished-at="2023-12-21T13:36:03 IST" duration-ms="601442">
+    <groups>
+    </groups>
+    <test started-at="2023-12-21T13:26:01 IST" name="Default test" finished-at="2023-12-21T13:36:03 IST" duration-ms="601442">
+      <class name="CriticalFlowRun.Criticalflow">
+        <test-method is-config="true" signature="Login()[pri:0, instance:CriticalFlowRun.Criticalflow@384ad17b]" started-at="2023-12-21T13:26:01 IST" name="Login" finished-at="2023-12-21T13:26:01 IST" duration-ms="510" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method is-config="true" signature="Max()[pri:0, instance:CriticalFlowRun.Criticalflow@384ad17b]" started-at="2023-12-21T13:26:01 IST" name="Max" finished-at="2023-12-21T13:26:03 IST" duration-ms="1757" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Max -->
+        <test-method is-config="true" signature="url()[pri:0, instance:CriticalFlowRun.Criticalflow@384ad17b]" started-at="2023-12-21T13:26:03 IST" name="url" finished-at="2023-12-21T13:26:06 IST" duration-ms="3026" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- url -->
+        <test-method signature="Customercreation100(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:CriticalFlowRun.Criticalflow@384ad17b]" started-at="2023-12-21T13:26:09 IST" name="Customercreation100" data-provider="itemsdata" finished-at="2023-12-21T13:36:01 IST" duration-ms="592432" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[aejaaz.ghouse@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8056016697]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[testingsa_1_2020@vakilsearch.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Vakil@123]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Test1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Testing]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Sakthi]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[No:07 Poes Garden ,Chennai]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[600086]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Dhrubo BD]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Sharanya BD]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Basic food Licence]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[9789955331]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Testing Entity]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[L17110MH1973PLC7112902866]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[dhruboisbd@gmail.com]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[Vakil@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Customercreation100 -->
+        <test-method is-config="true" signature="close()[pri:0, instance:CriticalFlowRun.Criticalflow@384ad17b]" started-at="2023-12-21T13:36:01 IST" name="close" finished-at="2023-12-21T13:36:01 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method is-config="true" signature="Report()[pri:0, instance:CriticalFlowRun.Criticalflow@384ad17b]" started-at="2023-12-21T13:36:01 IST" name="Report" finished-at="2023-12-21T13:36:03 IST" duration-ms="1361" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Report -->
+        <test-method is-config="true" signature="Mail()[pri:0, instance:CriticalFlowRun.Criticalflow@384ad17b]" started-at="2023-12-21T13:36:03 IST" name="Mail" finished-at="2023-12-21T13:36:11 IST" duration-ms="8705" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Mail -->
+      </class> <!-- CriticalFlowRun.Criticalflow -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
