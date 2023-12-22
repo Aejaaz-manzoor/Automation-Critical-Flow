@@ -92,7 +92,7 @@ static String Date1 = dateFormat.format(new Date());
 			MimeBodyPart messageBodyPart2 = new MimeBodyPart();
 			//"C:\\Users\\admin\\git\\Automation-Critical-Flow\\GRCCriticalflow\\Screenshots"
 			// Mention the file which you want to send
-			String filename = "\\\\14.140.167.188\\Vakilsearch\\Vakilsearch_Smoke_Testing\\"+Date1+"\\extentreport.html";
+			String filename = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\"+Date1+"\\extentreport.html";
 		//	String filename = "C:\\Users\\admin\\git\\Automation-Critical-Flow\\GRCCriticalflow\\Screenshots\\"+Date1+"\\extentreport.html";
 			// Create data source and pass the filename
 			DataSource source = new FileDataSource(filename);

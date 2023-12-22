@@ -1,6 +1,8 @@
 package CriticalFlowRun;
 
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -28,6 +30,7 @@ import Keymethods.Base;
 import Keymethods.Driver;
 import Keymethods.GRCPage;
 import Keymethods.SendMailSSLWithAttachment;
+import Keymethods.slack;
 import PageFactory.HomescreenPageobject;
 import PageFactory.HelpdeskPageobject;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -51,7 +54,7 @@ public class Criticalflow {
 
 	public String[][] getExcelData() throws BiffException, IOException {
 		FileInputStream excel = new FileInputStream(
-				"\\\\14.140.167.188\\Vakilsearch\\Vakilsearch_Smoke_Testing\\Excel\\Items jxl.xls");
+				"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\Excel\\Items jxl.xls");
 		Workbook workbook = Workbook.getWorkbook(excel);
 		Sheet sheet = workbook.getSheet("Sheet5");
 		int rowCount = sheet.getRows();
@@ -70,7 +73,7 @@ public class Criticalflow {
 
 	}
 
-	public WebDriver driver;
+	WebDriver driver;
 
 	@BeforeSuite
 	public void Login() throws InterruptedException, AWTException {
@@ -78,7 +81,7 @@ public class Criticalflow {
 		String Date1 = dateFormat.format(new Date());
 		extentreport = new ExtentReports();
 		htmlReporter = new ExtentSparkReporter(
-				"\\\\14.140.167.188\\Vakilsearch\\Vakilsearch_Smoke_Testing\\" + Date1 + "\\extentreport.html");
+				"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\extentreport.html");
 		// htmlReporter = new
 		// ExtentSparkReporter("C:\\Users\\admit\\git\\Automation-Critical-Flow\\GRCCriticalflow\\Screenshots\\"+Date1+"\\extentreport.html");
 
@@ -88,17 +91,17 @@ public class Criticalflow {
 
 	@BeforeTest
 	public void Max() throws InterruptedException, AWTException {
-		Driver d = new Driver(driver);
+		//Driver d = new Driver(driver);
 		WebDriverManager.chromedriver().setup();
-		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		ChromeOptions option = new ChromeOptions();
-		option.addArguments("incognito");
+//		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+//		ChromeOptions option = new ChromeOptions();
+//		option.addArguments("incognito");
+//
+//		option.addArguments("start-maximized");
+//		capabilities.setCapability(ChromeOptions.CAPABILITY, option);
+//		option.addArguments("--headless");
 
-		option.addArguments("start-maximized");
-		capabilities.setCapability(ChromeOptions.CAPABILITY, option);
-		option.addArguments("--headless");
-
-		driver = new ChromeDriver(capabilities);
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
 	}
@@ -149,11 +152,24 @@ public class Criticalflow {
 	}
 
 	@AfterSuite
-	public void Mail() throws EmailException {
-		SendMailSSLWithAttachment Mail = new SendMailSSLWithAttachment();
-	Mail.main();
-		System.out.println("Test completed1");
-		driver.quit();
-	}
+	public void Mail() {
+	    try {
+	        SendMailSSLWithAttachment Mail = new SendMailSSLWithAttachment();
+	        Robot robot = new Robot();
+	        Mail.main();
 
-}
+	        slack slackmsg = new slack();
+	        slackmsg.slackMessageTest(driver);
+
+	        robot.keyPress(KeyEvent.VK_ENTER);
+	        robot.keyRelease(KeyEvent.VK_ENTER);
+	    } catch (Exception e) {
+	        // Handle exceptions appropriately, log them
+	        e.printStackTrace();
+	    } finally {
+	        // Ensure that driver is quit even if there is an exception
+	        if (driver != null) {
+	            driver.quit();
+	        }
+	    }}}
+	
