@@ -53,7 +53,7 @@ public class GRCPage extends GRCPageobject {
 
 //		Set<String> allwindowsid = driver.getWindowHandles();
 //		List<String> all = new ArrayList<>();
-//		all.addAll(allwindowsid);
+//		all.addAll(allwindowsid); 
 //		driver.switchTo().window(all.get(5));
 //		List<String> all7 = new ArrayList<String>(driver.getWindowHandles());
 //		driver.switchTo().window(all7.get(1));

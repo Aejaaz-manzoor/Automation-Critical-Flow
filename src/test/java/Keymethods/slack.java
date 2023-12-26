@@ -71,7 +71,7 @@ String Date1 = dateFormat.format(new Date());
 		robot.keyPress(KeyEvent.VK_R);
 		robot.keyRelease(KeyEvent.VK_R);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'Vakilsearch')])[3]")))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'7')]//parent::div//parent::div)[1]")))
 				.click();
 		
 		Thread.sleep(5000);
