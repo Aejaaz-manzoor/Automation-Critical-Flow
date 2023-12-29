@@ -57,7 +57,16 @@ String Date1 = dateFormat.format(new Date());
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='password']"))).click();
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("shakthi_07");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Next')]"))).click();
-		Thread.sleep(3000);
+		Thread.sleep(8000);
+		
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'7')]//parent::div//parent::div)[1]")))
+			.click();
+	
+	Thread.sleep(5000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		
 		// Add your Slack messaging steps here
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_R);
@@ -71,10 +80,12 @@ String Date1 = dateFormat.format(new Date());
 		robot.keyPress(KeyEvent.VK_R);
 		robot.keyRelease(KeyEvent.VK_R);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
+		Thread.sleep(8000);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'7')]//parent::div//parent::div)[1]")))
 				.click();
 		
 		Thread.sleep(5000);
+		}
 				Set<String> handles = driver.getWindowHandles();
         // Switch to the second tab
         for (String handle : handles) {
@@ -100,7 +111,7 @@ String Date1 = dateFormat.format(new Date());
 		WebElement uploadButton = wait.until(ExpectedConditions
 				.elementToBeClickable(By.xpath("//span[contains(text(),'Upload from your computer')]")));
 		uploadButton.click();
-Thread.sleep(6000);
+Thread.sleep(9000);
 		// Add dynamic file path or make it configurable
 		String filePath = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1
 						+ "\\ExtentreportScreenshot.png";
@@ -129,10 +140,10 @@ Thread.sleep(6000);
 			robot.keyPress(keyCode);
 			robot.keyRelease(keyCode);
 		}
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 	}
 	private void uploadFileWithRobot1(Robot robot, String Extentreport) throws InterruptedException {
 		for (char c : Extentreport.toCharArray()) {
@@ -140,16 +151,16 @@ Thread.sleep(6000);
 			robot.keyPress(keyCode);
 			robot.keyRelease(keyCode);
 		}
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 	}
 	public void ExtenScreenshot(WebDriver driver) throws InterruptedException, IOException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		String filename = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\"+Date1+"\\extentreport.html";
 		driver.get(filename);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		wait.until(
 				ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='fa fa-bar-chart']")))
 				.click();
