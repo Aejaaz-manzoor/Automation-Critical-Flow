@@ -160,7 +160,7 @@ public class Criticalflow {
 				Robot robot = new Robot();
 				String screenshotLocation = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\ExtentreportScreenshot.png";
 				String extentreportLocation = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\extentreport.html";
-				String messageInputdata = "URL response Automation Test Report";
+				String messageInputdata = "CriticalFlow Automation Test Report";
 	        SendMailSSLWithAttachment Mail = new SendMailSSLWithAttachment();
 	       
 	        Mail.main();
