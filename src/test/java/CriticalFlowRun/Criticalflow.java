@@ -43,7 +43,8 @@ public class Criticalflow {
 	ExtentReports extentreport;
 	ExtentSparkReporter htmlReporter;
 	ExtentTest test;
-
+	SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+	String Date1 = dateFormat.format(new Date());
 	String[][] data = null;
 
 	@DataProvider(name = "itemsdata")
@@ -154,12 +155,18 @@ public class Criticalflow {
 	@AfterSuite
 	public void Mail() {
 	    try {
+	    	
+	    
+				Robot robot = new Robot();
+				String screenshotLocation = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\ExtentreportScreenshot.png";
+				String extentreportLocation = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\extentreport.html";
+				String messageInputdata = "URL response Automation Test Report";
 	        SendMailSSLWithAttachment Mail = new SendMailSSLWithAttachment();
-	        Robot robot = new Robot();
+	       
 	        Mail.main();
 
 	        slack slackmsg = new slack();
-	        slackmsg.slackMessageTest(driver);
+	        slackmsg.slackMessageTest(driver, screenshotLocation, extentreportLocation, messageInputdata);
 
 	        robot.keyPress(KeyEvent.VK_ENTER);
 	        robot.keyRelease(KeyEvent.VK_ENTER);
