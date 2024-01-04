@@ -228,6 +228,8 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 		List<String> all29 = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(all29.get(0));
 		} catch (Exception CriticalNote) {
+			
+			System.out.println(CriticalNote + "Critical note failed ********************************************8");
 			screenshot.screenshot21(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());

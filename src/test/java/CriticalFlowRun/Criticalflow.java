@@ -123,17 +123,14 @@ public class Criticalflow {
 		SimpleDateFormat dateFormat2 = new SimpleDateFormat("wwyyyyhh");
 		String Date12 = dateFormat2.format(new Date());
 
-		Base base = new Base();
-		base.Base1(driver, CrmUsernames, GRCMobileNumber, extentreport, Date12);
-		base.PrivateLimited(driver, CrmUsernames, GRCMobileNumber, extentreport, Date12);
-		System.out.println(Date12);
-//GRCPage grcpage1 = new GRCPage(driver, extentreport, GRCMobileNumber,
-//GRCNewCompanyName, CINNumber,
-//Helpdeskuserid, helpdeskpassword, assignedtoName);
-		CriticalFlowDetail Criticalflow = new CriticalFlowDetail(driver, Helpdeskuserid, helpdeskpassword, notesname,
-				notedescrption, QNameOfCustomer, qaddress, qpincode, Professionalfees, assignedtoName, BDAgentName,
-				CrossSaleName, GRCMobileNumber, CrmUsernames, CrmUserpassword, GRCNewCompanyName, CINNumber,
-				extentreport);
+//		Base base = new Base();
+//		base.Base1(driver, CrmUsernames, GRCMobileNumber, extentreport, Date12);
+//		base.PrivateLimited(driver, CrmUsernames, GRCMobileNumber, extentreport, Date12);
+//		System.out.println(Date12);
+//		CriticalFlowDetail Criticalflow = new CriticalFlowDetail(driver, Helpdeskuserid, helpdeskpassword, notesname,
+//				notedescrption, QNameOfCustomer, qaddress, qpincode, Professionalfees, assignedtoName, BDAgentName,
+//				CrossSaleName, GRCMobileNumber, CrmUsernames, CrmUserpassword, GRCNewCompanyName, CINNumber,
+//				extentreport);
 
 	}
 
@@ -163,7 +160,7 @@ public class Criticalflow {
 				String messageInputdata = "CriticalFlow Automation Test Report";
 	        SendMailSSLWithAttachment Mail = new SendMailSSLWithAttachment();
 	       
-	        Mail.main();
+	      //  Mail.main();
 
 	        slack slackmsg = new slack();
 	        slackmsg.slackMessageTest(driver, screenshotLocation, extentreportLocation, messageInputdata);
