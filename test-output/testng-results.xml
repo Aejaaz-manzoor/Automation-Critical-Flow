@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-28T18:13:17 IST" name="Default suite" finished-at="2023-12-28T18:16:30 IST" duration-ms="193349">
+  <suite started-at="2024-01-04T10:52:02 IST" name="Default suite" finished-at="2024-01-04T10:55:54 IST" duration-ms="231346">
     <groups>
     </groups>
-    <test started-at="2023-12-28T18:13:17 IST" name="Default test" finished-at="2023-12-28T18:16:30 IST" duration-ms="193349">
+    <test started-at="2024-01-04T10:52:02 IST" name="Default test" finished-at="2024-01-04T10:55:54 IST" duration-ms="231346">
       <class name="CriticalFlowRun.Criticalflow">
-        <test-method is-config="true" signature="Login()[pri:0, instance:CriticalFlowRun.Criticalflow@6e171cd7]" started-at="2023-12-28T18:13:16 IST" name="Login" finished-at="2023-12-28T18:13:17 IST" duration-ms="618" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:CriticalFlowRun.Criticalflow@47af7f3d]" started-at="2024-01-04T10:52:02 IST" name="Login" finished-at="2024-01-04T10:52:02 IST" duration-ms="312" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method is-config="true" signature="Max()[pri:0, instance:CriticalFlowRun.Criticalflow@6e171cd7]" started-at="2023-12-28T18:13:17 IST" name="Max" finished-at="2023-12-28T18:13:20 IST" duration-ms="3079" status="PASS">
+        <test-method is-config="true" signature="Max()[pri:0, instance:CriticalFlowRun.Criticalflow@47af7f3d]" started-at="2024-01-04T10:52:02 IST" name="Max" finished-at="2024-01-04T10:52:04 IST" duration-ms="1592" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Max -->
-        <test-method is-config="true" signature="url()[pri:0, instance:CriticalFlowRun.Criticalflow@6e171cd7]" started-at="2023-12-28T18:13:20 IST" name="url" finished-at="2023-12-28T18:13:23 IST" duration-ms="3065" status="PASS">
+        <test-method is-config="true" signature="url()[pri:0, instance:CriticalFlowRun.Criticalflow@47af7f3d]" started-at="2024-01-04T10:52:04 IST" name="url" finished-at="2024-01-04T10:52:07 IST" duration-ms="3065" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- url -->
-        <test-method signature="Customercreation100(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:CriticalFlowRun.Criticalflow@6e171cd7]" started-at="2023-12-28T18:13:25 IST" name="Customercreation100" data-provider="itemsdata" finished-at="2023-12-28T18:16:29 IST" duration-ms="184087" status="FAIL">
+        <test-method signature="Customercreation100(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:CriticalFlowRun.Criticalflow@47af7f3d]" started-at="2024-01-04T10:52:07 IST" name="Customercreation100" data-provider="itemsdata" finished-at="2024-01-04T10:55:53 IST" duration-ms="225539" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -112,24 +112,26 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[element not interactable
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=120.0.6099.130)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-R2AJQE8', ip: '172.31.98.162', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62123}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 094302c6cbe03a1d8dc31bbd118d05f9]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52961}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 149816d1a53738bb865f04347b9c09ab]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=120.0.6099.130)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-R2AJQE8', ip: '172.31.98.162', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62123}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 094302c6cbe03a1d8dc31bbd118d05f9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52961}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 149816d1a53738bb865f04347b9c09ab
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -141,16 +143,11 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-at MainBase.CriticalFlowDetail.<init>(CriticalFlowDetail.java:493)
-at CriticalFlowRun.Criticalflow.Customercreation100(Criticalflow.java:132)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+at Keymethods.ScreenShot.screenshot29(ScreenShot.java:305)
+at MainBase.CriticalFlowDetail.<init>(CriticalFlowDetail.java:826)
+at CriticalFlowRun.Criticalflow.Customercreation100(Criticalflow.java:133)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -181,19 +178,19 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Customercreation100 -->
-        <test-method is-config="true" signature="close()[pri:0, instance:CriticalFlowRun.Criticalflow@6e171cd7]" started-at="2023-12-28T18:16:29 IST" name="close" finished-at="2023-12-28T18:16:29 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:CriticalFlowRun.Criticalflow@47af7f3d]" started-at="2024-01-04T10:55:53 IST" name="close" finished-at="2024-01-04T10:55:53 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method is-config="true" signature="Report()[pri:0, instance:CriticalFlowRun.Criticalflow@6e171cd7]" started-at="2023-12-28T18:16:29 IST" name="Report" finished-at="2023-12-28T18:16:30 IST" duration-ms="904" status="PASS">
+        <test-method is-config="true" signature="Report()[pri:0, instance:CriticalFlowRun.Criticalflow@47af7f3d]" started-at="2024-01-04T10:55:53 IST" name="Report" finished-at="2024-01-04T10:55:54 IST" duration-ms="737" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Report -->
-        <test-method is-config="true" signature="Mail()[pri:0, instance:CriticalFlowRun.Criticalflow@6e171cd7]" started-at="2023-12-28T18:16:30 IST" name="Mail" finished-at="2023-12-28T18:16:30 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="Mail()[pri:0, instance:CriticalFlowRun.Criticalflow@47af7f3d]" started-at="2024-01-04T10:55:54 IST" name="Mail" finished-at="2024-01-04T10:55:59 IST" duration-ms="5737" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Mail -->
