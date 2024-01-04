@@ -25,6 +25,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.google.gson.JsonObject;
 
 import Keymethods.Base;
 import Keymethods.Driver;
@@ -34,6 +35,10 @@ import Keymethods.slack;
 import PageFactory.HomescreenPageobject;
 import PageFactory.HelpdeskPageobject;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
@@ -51,7 +56,7 @@ public class Criticalflow {
 	public String[][] loginDataProvider() throws BiffException, IOException {
 		data = getExcelData();
 		return data;
-	} 
+	}
 
 	public String[][] getExcelData() throws BiffException, IOException {
 		FileInputStream excel = new FileInputStream(
@@ -92,7 +97,7 @@ public class Criticalflow {
 
 	@BeforeTest
 	public void Max() throws InterruptedException, AWTException {
-		//Driver d = new Driver(driver);
+		// Driver d = new Driver(driver);
 		WebDriverManager.chromedriver().setup();
 //		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 //		ChromeOptions option = new ChromeOptions();
@@ -117,20 +122,22 @@ public class Criticalflow {
 	}
 
 	@Test(dataProvider = "itemsdata")
-	public void Customercreation100(String Username, String Mobilenumber, String Helpdeskuserid,String helpdeskpassword, String notesname, String notedescrption, String QNameOfCustomer, String qaddress,
+	public void Customercreation100(String Username, String Mobilenumber, String Helpdeskuserid,
+			String helpdeskpassword, String notesname, String notedescrption, String QNameOfCustomer, String qaddress,
 			String qpincode, String Professionalfees, String assignedtoName, String BDAgentName, String CrossSaleName,
-			String GRCMobileNumber, String GRCNewCompanyName, String CINNumber, String CrmUsernames,String CrmUserpassword) throws Exception {
+			String GRCMobileNumber, String GRCNewCompanyName, String CINNumber, String CrmUsernames,
+			String CrmUserpassword) throws Exception {
 		SimpleDateFormat dateFormat2 = new SimpleDateFormat("wwyyyyhh");
 		String Date12 = dateFormat2.format(new Date());
 
-//		Base base = new Base();
-//		base.Base1(driver, CrmUsernames, GRCMobileNumber, extentreport, Date12);
-//		base.PrivateLimited(driver, CrmUsernames, GRCMobileNumber, extentreport, Date12);
-//		System.out.println(Date12);
-//		CriticalFlowDetail Criticalflow = new CriticalFlowDetail(driver, Helpdeskuserid, helpdeskpassword, notesname,
-//				notedescrption, QNameOfCustomer, qaddress, qpincode, Professionalfees, assignedtoName, BDAgentName,
-//				CrossSaleName, GRCMobileNumber, CrmUsernames, CrmUserpassword, GRCNewCompanyName, CINNumber,
-//				extentreport);
+		Base base = new Base();
+		base.Base1(driver, CrmUsernames, GRCMobileNumber, extentreport, Date12);
+		base.PrivateLimited(driver, CrmUsernames, GRCMobileNumber, extentreport, Date12);
+		System.out.println(Date12);
+		CriticalFlowDetail Criticalflow = new CriticalFlowDetail(driver, Helpdeskuserid, helpdeskpassword, notesname,
+				notedescrption, QNameOfCustomer, qaddress, qpincode, Professionalfees, assignedtoName, BDAgentName,
+				CrossSaleName, GRCMobileNumber, CrmUsernames, CrmUserpassword, GRCNewCompanyName, CINNumber,
+				extentreport);
 
 	}
 
@@ -151,30 +158,49 @@ public class Criticalflow {
 
 	@AfterSuite
 	public void Mail() {
-	    try {
-	    	 
-	    
-				Robot robot = new Robot();
-				String screenshotLocation = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\ExtentreportScreenshot.png";
-				String extentreportLocation = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\extentreport.html";
-				String messageInputdata = "CriticalFlow Automation Test Report";
-	        SendMailSSLWithAttachment Mail = new SendMailSSLWithAttachment();
-	       
-	       Mail.main();
+		try {
 
-	        slack slackmsg = new slack();
-	        slackmsg.slackMessageTest(driver, screenshotLocation, extentreportLocation, messageInputdata);
+			Robot robot = new Robot();
+			String screenshotLocation = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1
+					+ "\\ExtentreportScreenshot.png";
+			String extentreportLocation = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1
+					+ "\\extentreport.html";
+			String messageInputdata = "CriticalFlow Automation Test Report";
+			SendMailSSLWithAttachment Mail = new SendMailSSLWithAttachment();
 
-	        robot.keyPress(KeyEvent.VK_ENTER);
-	        robot.keyRelease(KeyEvent.VK_ENTER);
-	    } catch (Exception e) {
-	        // Handle exceptions appropriately, log them
-	        e.printStackTrace();
-	    } finally {
-	        // Ensure that driver is quit even if there is an exception
-	        if (driver != null) {
-	            driver.quit();
-	        }
-	    }
-	}}
-	
+			Mail.main();
+
+			slack slackmsg = new slack();
+			slackmsg.slackMessageTest(driver, screenshotLocation, extentreportLocation, messageInputdata);
+
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			CriticalFlowDetail sendstatus = new CriticalFlowDetail(driver, messageInputdata, messageInputdata,
+					messageInputdata, messageInputdata, messageInputdata, messageInputdata, messageInputdata,
+					messageInputdata, messageInputdata, messageInputdata, messageInputdata, messageInputdata,
+					messageInputdata, screenshotLocation, extentreportLocation, messageInputdata, extentreport);
+			sendstatus.sendStatusToGoogleChat("Critical note Automation completed slack message and slack not sent");
+		} catch (Exception msg) {
+			// Handle exceptions appropriately, log them
+
+			String message = "Mail or slack not sent------" + msg.getMessage().substring(0, 60);
+			String k = "https://chat.googleapis.com/v1/spaces/AAAAgosrJz0/messages";
+			RestAssured.baseURI = k;
+			RequestSpecification httpRequest = RestAssured.given();
+			JsonObject requestParams = new JsonObject();
+			requestParams.addProperty("text", message);
+			httpRequest.queryParam("key", "AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI");
+			httpRequest.queryParam("token", "IS9TRk_kE3aSPbwA79mtZqk5Z0xcJfjFYs8h6P04Ltw");
+			httpRequest.header("Content-Type", "application/json");
+			httpRequest.body(requestParams.toString());
+			Response response = httpRequest.request(Method.POST);
+			System.out.println(response.asPrettyString());
+
+		} finally {
+			// Ensure that driver is quit even if there is an exception
+			if (driver != null) {
+				driver.quit();
+			}
+		}
+	}
+}

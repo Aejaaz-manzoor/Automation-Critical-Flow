@@ -33,6 +33,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import com.google.gson.JsonObject;
 
 import Keymethods.GRCPage;
 
@@ -43,6 +44,10 @@ import PageFactory.GRCPageobject;
 import PageFactory.HelpdeskPageobject;
 
 import PageFactory.NewCRMPageobject;
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 public class CriticalFlowDetail extends HelpdeskPageobject {
 
@@ -79,7 +84,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 		Thread.sleep(5000);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://helpdesk.vakilsearch.com/login");
-
+		sendStatusToGoogleChat("Critical flow test started");
 		Thread.sleep(10000);
 		Username.sendKeys(Helpdeskuserid);
 		String text1 = Username.getText();
@@ -112,6 +117,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			// ticketid.sendKeys(GRCPage.e);
 		} catch (Exception Search) {
 			System.out.println(Search);
+			
 
 		}
 
@@ -228,7 +234,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 		List<String> all29 = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(all29.get(0));
 		} catch (Exception CriticalNote) {
-			
+			sendStatusToGoogleChat("Critical note failed-----" + CriticalNote.getMessage().substring(0, 60));
 			System.out.println(CriticalNote + "Critical note failed ********************************************8");
 			screenshot.screenshot21(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
@@ -272,7 +278,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			savepersonalnote.click();
 
 		} catch (Exception PersonalNote) {
-
+			sendStatusToGoogleChat("PersonalNote failed-----" + PersonalNote.getMessage().substring(0, 60));
 			screenshot.screenshot23(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -390,6 +396,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 		List<String> all30 = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(all30.get(0));
 		} catch (Exception AddNote) {
+			sendStatusToGoogleChat("AddNote failed-------" + AddNote.getMessage().substring(0, 60));
 			screenshot.screenshot24(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -491,7 +498,8 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			wait.until(ExpectedConditions.alertIsPresent()).accept();
 
 		} catch (Exception Editticket1) {
-
+			sendStatusToGoogleChat("Editticket failed----------testingtestdhrubo bd"
+					+ "" + Editticket1.getMessage().substring(0, 60));
 			screenshot.screenshot20(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -579,6 +587,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			executor441.executeScript("arguments[0].click();", element441);
 			// cannedupdateCTA.click();
 		} catch (Exception cannedException) {
+			sendStatusToGoogleChat("cannedrespose failed-------" + cannedException.getMessage().substring(0, 60));
 			screenshot.screenshot26(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -642,6 +651,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 				}
 				driver.findElement(By.xpath("//a[@rel='nofollow']")).click();
 			} catch (Exception EventValidation) {
+				sendStatusToGoogleChat("EventValidation failed--------" + EventValidation.getMessage().substring(0, 60));
 				screenshot.screenshot28(driver, extentreport);
 				SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 				String Date1 = dateFormat.format(new Date());
@@ -656,6 +666,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			driver.close();
 
 		} catch (Exception NewCRM) {
+			
 			screenshot.screenshot51(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -824,6 +835,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			Thread.sleep(2500);
 
 		} catch (Exception CreatenewQuotation1) {
+			sendStatusToGoogleChat("CreatenewQuotation failed-------" + CreatenewQuotation1.getMessage().substring(0, 60));
 			System.out.println(CreatenewQuotation1);
 			screenshot.screenshot29(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
@@ -1029,6 +1041,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot33.png",
 					"Generate Quotation").build());
 		} catch (Exception GenerateQuotation1) {
+			sendStatusToGoogleChat("GenerateQuotation failed---------" + GenerateQuotation1.getMessage().substring(0, 60));
 			screenshot.screenshot33(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -1095,7 +1108,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot35.png",
 					"LoadmoreMessage").build());
 		} catch (Exception LoadmoreMessage) {
-
+			sendStatusToGoogleChat("LoadmoreMessage failed----------" + LoadmoreMessage.getMessage().substring(0, 60));
 			screenshot.screenshot35(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -1154,6 +1167,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			robot.keyRelease(KeyEvent.VK_CONTROL);
 
 		} catch (Exception Crosssale1) {
+			sendStatusToGoogleChat("Crosssale failed---------" + Crosssale1.getMessage().substring(0, 60));
 			screenshot.screenshot36(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -1180,6 +1194,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			Thread.sleep(5000);
 
 		} catch (Exception RecentTicket1) {
+			sendStatusToGoogleChat("RecentTicket failed---------" + RecentTicket1.getMessage().substring(0, 60));
 			screenshot.screenshot37(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -1257,6 +1272,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			driver.switchTo().alert().accept();
 
 		} catch (Exception Merge1) {
+			sendStatusToGoogleChat("Merge failed----------" + Merge1.getMessage().substring(0, 60));
 			screenshot.screenshot38(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -1350,6 +1366,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot40.png",
 					"Magic Key").build());
 		} catch (Exception magickey1) {
+			sendStatusToGoogleChat("magickey failed----------" + magickey1.getMessage().substring(0, 60));
 			screenshot.screenshot40(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -1370,6 +1387,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			driver.navigate().back();
 
 		} catch (Exception Customerdashboard1) {
+			sendStatusToGoogleChat("Customerdashboard failed--------" + Customerdashboard1.getMessage().substring(0, 60));
 			screenshot.screenshot41(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -1418,6 +1436,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot42.png",
 					"Grc Redirection").build());
 		} catch (Exception Grcredirection1) {
+			sendStatusToGoogleChat("Grcredirection failed-----------" + Grcredirection1.getMessage().substring(0, 60));
 			screenshot.screenshot42(driver, extentreport);
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String Date1 = dateFormat.format(new Date());
@@ -1438,9 +1457,25 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			System.out.println("already Logout");
 
 		}
+		
 		// NewCRM newCRM = new NewCRM();
 		// newCRM.newCRM(driver, ReferenceTicketID, CrmUsernames, CrmUserpassword,
 		// extentreport);
 	}
+	
+	
+	public void sendStatusToGoogleChat(String message) {
+		String k = "https://chat.googleapis.com/v1/spaces/AAAAgosrJz0/messages";
+		RestAssured.baseURI = k;
+		RequestSpecification httpRequest = RestAssured.given();
+		JsonObject requestParams = new JsonObject();
+		requestParams.addProperty("text", message);
+		httpRequest.queryParam("key", "AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI");
+		httpRequest.queryParam("token", "IS9TRk_kE3aSPbwA79mtZqk5Z0xcJfjFYs8h6P04Ltw");
+		httpRequest.header("Content-Type", "application/json");
+		httpRequest.body(requestParams.toString());
+		Response response = httpRequest.request(Method.POST);
+		System.out.println(response.asPrettyString());
+}
 
 }
