@@ -152,7 +152,7 @@ public class Criticalflow {
 	@AfterSuite
 	public void Mail() {
 	    try {
-	    	
+	    	 
 	    
 				Robot robot = new Robot();
 				String screenshotLocation = "\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\ExtentreportScreenshot.png";
