@@ -176,7 +176,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			robot.keyRelease(KeyEvent.VK_B);
 			robot.keyPress(KeyEvent.VK_D);
 			robot.keyRelease(KeyEvent.VK_D);
-
+ 
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			screenshot.screenshot21(driver, extentreport);
