@@ -160,7 +160,7 @@ public class Criticalflow {
 				String messageInputdata = "CriticalFlow Automation Test Report";
 	        SendMailSSLWithAttachment Mail = new SendMailSSLWithAttachment();
 	       
-	      //  Mail.main();
+	       Mail.main();
 
 	        slack slackmsg = new slack();
 	        slackmsg.slackMessageTest(driver, screenshotLocation, extentreportLocation, messageInputdata);
