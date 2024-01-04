@@ -51,7 +51,7 @@ public class Criticalflow {
 	public String[][] loginDataProvider() throws BiffException, IOException {
 		data = getExcelData();
 		return data;
-	}
+	} 
 
 	public String[][] getExcelData() throws BiffException, IOException {
 		FileInputStream excel = new FileInputStream(

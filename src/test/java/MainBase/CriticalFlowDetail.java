@@ -190,14 +190,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			CriticalNoteSave.click();
 			Thread.sleep(5000);
 
-		} catch (Exception CriticalNote) {
-			screenshot.screenshot21(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			testr.log(Status.PASS, MediaEntityBuilder.createScreenCaptureFromPath(
-					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot21.png",
-					"CriticalNote").build());
-		}
+		
 		Thread.sleep(3000);
 
 		Thread.sleep(8500);
@@ -219,8 +212,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			List<String> all29 = new ArrayList<String>(driver.getWindowHandles());
 
 			screenshot.screenshot22(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
+			
 			testr.log(Status.PASS, MediaEntityBuilder.createScreenCaptureFromPath(
 					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot22.png",
 					"Critical Note verification").build());
@@ -228,14 +220,25 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			driver.close();
 		} else {
 			screenshot.screenshot22(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
+		
 			testr.log(Status.PASS, MediaEntityBuilder.createScreenCaptureFromPath(
 					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot22.png",
 					"Critical Note verification").build());
 		}
 		List<String> all29 = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(all29.get(0));
+		} catch (Exception CriticalNote) {
+			screenshot.screenshot21(driver, extentreport);
+			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+			String Date1 = dateFormat.format(new Date());
+			testr.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(
+					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot21.png",
+					"CriticalNote").build());
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+		}
 		try {
 
 			PersonalNote.click();
@@ -274,6 +277,10 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			testr.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(
 					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot23.png",
 					"Personal Note").build());
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
 		}
 
 		Thread.sleep(1500);
@@ -352,14 +359,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			 * TimeUnit.SECONDS);
 			 */
 
-		} catch (Exception AddNote) {
-			screenshot.screenshot24(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			testr.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(
-					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot24.png",
-					"Add Note").build());
-		}
+		
 		Thread.sleep(3500);
 		// js.executeScript("arguments[0].scrollIntoView(true);",
 		// RecentNoteVerification);
@@ -372,8 +372,7 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			List<String> all30 = new ArrayList<String>(driver.getWindowHandles());
 
 			screenshot.screenshot25(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
+		
 			testr.log(Status.PASS, MediaEntityBuilder.createScreenCaptureFromPath(
 					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot25.png",
 					"Add Note Verification").build());
@@ -381,14 +380,25 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 			driver.close();
 		} else {
 			screenshot.screenshot25(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
+			
 			testr.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(
 					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot25.png",
 					"Add Note Verification").build());
 		}
 		List<String> all30 = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(all30.get(0));
+		} catch (Exception AddNote) {
+			screenshot.screenshot24(driver, extentreport);
+			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+			String Date1 = dateFormat.format(new Date());
+			testr.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(
+					"\\\\14.140.167.188\\Vakilsearch\\VakilsearchSmokeTesting\\" + Date1 + "\\Screenshot24.png",
+					"Add Note").build());
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+		}
 
 		try {
 			try {

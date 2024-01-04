@@ -37,8 +37,8 @@ public class HelpdeskPageobject extends LoginPageobjects {
 		
 	@FindBy (xpath = "(//input[@name='ticket_message[ticket_attachments_attributes][][attachment]'])[1]")
 	public static WebElement ChooseCriticalNoesFile ;
-	
-	@FindBy (xpath = "(//input[@class=\"btn rounded btn-success save_bulk_assignment\"])[1]")
+	//input[@type='submit'][@name='commit']
+	@FindBy (xpath = "(//input[@type='submit'][@name='commit'][@value='Save'][@class='btn rounded btn-success save_bulk_assignment'][@data-disable-with='Save'])[1]")
 	public static WebElement CriticalNoteSave ;
 	
 	@FindBy (xpath = "//form//input[@class='form-control input SwapDivsWithClick']")
