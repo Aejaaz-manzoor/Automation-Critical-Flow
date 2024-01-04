@@ -101,6 +101,7 @@ public class slack {
 		Thread.sleep(6000);
 		WebElement messageInput = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='ql-placeholder']")));
+		messageInput.clear();
 		messageInput.sendKeys(messageInputdata);
 		Thread.sleep(4000);
 		robot.keyPress(KeyEvent.VK_CONTROL);
