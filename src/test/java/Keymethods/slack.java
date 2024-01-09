@@ -134,7 +134,7 @@ Thread.sleep(6000);
 			"//button[@aria-label='Send now']")));
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
-	//	sendButton.click();
+		sendButton.click();
 	}
 	private void uploadFileWithRobot(Robot robot, String screenshotLocation) throws InterruptedException {
 		for (char c : screenshotLocation.toCharArray()) {
