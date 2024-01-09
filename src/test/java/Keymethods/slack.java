@@ -32,7 +32,7 @@ public class slack {
 		ExtenScreenshot(driver,screenshotLocation,extentreportLocation);
 		loginToSlack(driver);
 		sendMessageInSlack(driver,screenshotLocation,extentreportLocation,messageInputdata);
-		
+		 
 		
 	}
 	
