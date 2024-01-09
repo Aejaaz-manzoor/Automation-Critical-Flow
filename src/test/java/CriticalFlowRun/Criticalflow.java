@@ -179,7 +179,7 @@ public class Criticalflow {
 					messageInputdata, messageInputdata, messageInputdata, messageInputdata, messageInputdata,
 					messageInputdata, messageInputdata, messageInputdata, messageInputdata, messageInputdata,
 					messageInputdata, screenshotLocation, extentreportLocation, messageInputdata, extentreport);
-			sendstatus.sendStatusToGoogleChat("Critical note Automation completed slack message and slack not sent");
+			sendstatus.sendStatusToGoogleChat("Critical note Automation completed");
 		} catch (Exception msg) {
 			// Handle exceptions appropriately, log them
 
