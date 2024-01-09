@@ -43,7 +43,7 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
-public class Criticalflow {
+public class Criticalflow { 
 
 	ExtentReports extentreport;
 	ExtentSparkReporter htmlReporter;
