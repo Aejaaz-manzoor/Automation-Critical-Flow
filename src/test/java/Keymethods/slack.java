@@ -32,7 +32,7 @@ public class slack {
 		ExtenScreenshot(driver,screenshotLocation,extentreportLocation);
 		loginToSlack(driver);
 		sendMessageInSlack(driver,screenshotLocation,extentreportLocation,messageInputdata);
-		 
+		
 		
 	}
 	
@@ -94,14 +94,14 @@ public class slack {
 		wait.until(
 				ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'use Slack in your browser')]")))
 				.click();
-		Thread.sleep(6000);
+		Thread.sleep(5000);
 		WebElement channelElement = wait.until(ExpectedConditions.elementToBeClickable(
 				By.xpath("(//span[contains(text(),'automation-testing-reports')])[1]/parent::span/parent::div")));
 		channelElement.click();
 		Thread.sleep(6000);
 		WebElement messageInput = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='ql-placeholder']")));
-	
+
 		messageInput.sendKeys(messageInputdata);
 		Thread.sleep(7000);
 		robot.keyPress(KeyEvent.VK_CONTROL);
@@ -134,7 +134,7 @@ Thread.sleep(6000);
 			"//button[@aria-label='Send now']")));
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
-		//sendButton.click();
+	//	sendButton.click();
 	}
 	private void uploadFileWithRobot(Robot robot, String screenshotLocation) throws InterruptedException {
 		for (char c : screenshotLocation.toCharArray()) {
