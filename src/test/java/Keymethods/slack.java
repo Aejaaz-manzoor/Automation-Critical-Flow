@@ -23,20 +23,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class slack {
-	
 
 	@Test
-	public void slackMessageTest(WebDriver driver,String screenshotLocation,String extentreportLocation,String messageInputdata) throws AWTException, InterruptedException, IOException {
-	
-		ExtenScreenshot(driver,screenshotLocation,extentreportLocation);
+	public void slackMessageTest(WebDriver driver, String screenshotLocation, String extentreportLocation,
+			String messageInputdata) throws AWTException, InterruptedException, IOException {
+
+		ExtenScreenshot(driver, screenshotLocation, extentreportLocation);
 		loginToSlack(driver);
-		sendMessageInSlack(driver,screenshotLocation,extentreportLocation,messageInputdata);
-		
-		
+		sendMessageInSlack(driver, screenshotLocation, extentreportLocation, messageInputdata);
+
 	}
-	
-	
+
 	public void loginToSlack(WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		driver.get("https://slack.com/intl/en-in");
@@ -48,7 +47,9 @@ public class slack {
 		signInWithGoogle.click();
 		// Add login steps here
 	}
-	private void sendMessageInSlack(WebDriver driver,String screenshotLocation,String extentreportLocation,String messageInputdata) throws InterruptedException, AWTException {
+
+	private void sendMessageInSlack(WebDriver driver, String screenshotLocation, String extentreportLocation,
+			String messageInputdata) throws InterruptedException, AWTException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		Robot robot = new Robot();
 		driver.findElement(By.xpath("//input[@type='email']")).sendKeys("sakthi.priyan@vakilsearch.com");
@@ -56,39 +57,66 @@ public class slack {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='password']"))).click();
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("shakthi_07");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Next')]"))).click();
-		// Add your Slack messaging steps here
 		try {
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'7')]//parent::div//parent::div)[1]")))
-			.click();
-	
-	Thread.sleep(5000);
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Continue')]")));
+			driver.findElement(By.xpath("//span[contains(text(),'Continue')]")).click();
+
+		} catch (Exception e) {
+			try {
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			driver.findElement(By.xpath("//span[contains(text(),'Continue')]")).click();
+			}catch(Exception e1) {
+			System.out.println("continue not found");	
+			}
+			
+		}
+
+		try {
+			wait.until(ExpectedConditions
+					.elementToBeClickable(By.xpath("(//div[contains(text(),'7')]//parent::div//parent::div)[1]")))
+					.click();
+
+			Thread.sleep(5000);
 		} catch (Exception e) {
 			// TODO: handle exception
-		
-		// Add your Slack messaging steps here
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_R);
-		robot.keyRelease(KeyEvent.VK_R);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_R);
-		robot.keyRelease(KeyEvent.VK_R);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_R);
-		robot.keyRelease(KeyEvent.VK_R);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		Thread.sleep(8000);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'7')]//parent::div//parent::div)[1]")))
-				.click();
-		
-		Thread.sleep(8000);
-		}				Set<String> handles = driver.getWindowHandles();
-        // Switch to the second tab
-        for (String handle : handles) {
-            driver.switchTo().window(handle);
-        }
-		
+
+			// Add your Slack messaging steps here
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			Thread.sleep(8000);
+			wait.until(ExpectedConditions
+					.elementToBeClickable(By.xpath("(//div[contains(text(),'7')]//parent::div//parent::div)[1]")))
+					.click();
+
+			Thread.sleep(8000);
+		}
+		Set<String> handles = driver.getWindowHandles();
+		// Switch to the second tab
+		for (String handle : handles) {
+			driver.switchTo().window(handle);
+		}
+
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		wait.until(
@@ -103,75 +131,77 @@ public class slack {
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='ql-placeholder']")));
 
 		messageInput.sendKeys(messageInputdata);
+	
 		Thread.sleep(7000);
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_U);
 		robot.keyRelease(KeyEvent.VK_U);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
-Thread.sleep(6000);
+		Thread.sleep(10000);
 		// Add dynamic file path or make it configurable
-		
+
 		// Perform file upload actions using Robot class
 		uploadFileWithRobot(robot, screenshotLocation);
 //		WebElement sendButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
 //				"//button[@class='c-button-unstyled c-icon_button c-icon_button--size_small c-wysiwyg_container__button c-wysiwyg_container__button--send c-wysiwyg_container__button--disabled c-button--disabled c-icon_button--default']")));
 //		sendButton.click();
-	
-		
-			Thread.sleep(4000);
-			robot.keyPress(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_U);
-			robot.keyRelease(KeyEvent.VK_U);
-			robot.keyRelease(KeyEvent.VK_CONTROL);
-			Thread.sleep(7000);
-	
+
+		Thread.sleep(4000);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_U);
+		robot.keyRelease(KeyEvent.VK_U);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		Thread.sleep(7000);
 
 		// Add dynamic file path or make it configurable
-		
+
 		// Perform file upload actions using Robot class
 		uploadFileWithRobot1(robot, extentreportLocation);
-		WebElement sendButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-			"//button[@aria-label='Send now']")));
+		Thread.sleep(4000);
+		WebElement sendButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Send now']")));
+
+		sendButton.click();
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
-	//	sendButton.click();
 	}
+
 	private void uploadFileWithRobot(Robot robot, String screenshotLocation) throws InterruptedException {
 		for (char c : screenshotLocation.toCharArray()) {
 			int keyCode = KeyEvent.getExtendedKeyCodeForChar(c);
 			robot.keyPress(keyCode);
 			robot.keyRelease(keyCode);
-			
+
 		}
 		Thread.sleep(8000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(8000);
 	}
+
 	private void uploadFileWithRobot1(Robot robot, String extentreportLocation) throws InterruptedException {
 		for (char c : extentreportLocation.toCharArray()) {
 			int keyCode = KeyEvent.getExtendedKeyCodeForChar(c);
 			robot.keyPress(keyCode);
 			robot.keyRelease(keyCode);
-			
+
 		}
 		Thread.sleep(8000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(8000);
 	}
-	public void ExtenScreenshot(WebDriver driver,String screenshotLocation ,String extentreportLocation) throws InterruptedException, IOException {
+
+	public void ExtenScreenshot(WebDriver driver, String screenshotLocation, String extentreportLocation)
+			throws InterruptedException, IOException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-	
+
 		driver.get(extentreportLocation);
 		Thread.sleep(8000);
-		wait.until(
-				ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='fa fa-bar-chart']")))
-				.click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='fa fa-bar-chart']"))).click();
 		TakesScreenshot screenshot1 = ((TakesScreenshot) driver);
 		File srcFile1 = screenshot1.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(srcFile1,
-				new File(screenshotLocation));
-		
+		FileUtils.copyFile(srcFile1, new File(screenshotLocation));
+
 	}
 }
