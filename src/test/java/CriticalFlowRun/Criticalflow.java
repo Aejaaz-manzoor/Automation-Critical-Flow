@@ -43,8 +43,8 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
-public class Criticalflow { 
- 
+public class Criticalflow {
+
 	ExtentReports extentreport;
 	ExtentSparkReporter htmlReporter;
 	ExtentTest test;
@@ -99,14 +99,14 @@ public class Criticalflow {
 	public void Max() throws InterruptedException, AWTException {
 		// Driver d = new Driver(driver);
 		System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();    
-  		driver.manage().window().maximize();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
 
 	}
 
 	@BeforeClass
 	public void url() throws InterruptedException, AWTException {
-
+		System.out.println("Before class started");
 		PageFactory.initElements(driver, HomescreenPageobject.class);
 		PageFactory.initElements(driver, HelpdeskPageobject.class);
 		Thread.sleep(3000);
