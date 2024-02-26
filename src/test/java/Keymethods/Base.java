@@ -45,7 +45,7 @@ import PageFactory.LoginPageobjects;
 				throws InterruptedException, AWTException, IOException {
 			test = extentreport.createTest("Vakilsearch Test");
 			WebDriverWait wait = new WebDriverWait(driver, 30);
-			driver.manage().window().maximize();
+			
 
 			driver.get("https://vakilsearch.com/");
 
