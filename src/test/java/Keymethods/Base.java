@@ -44,7 +44,7 @@ import PageFactory.LoginPageobjects;
 		public void Base1(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport,String Date12)
 				throws InterruptedException, AWTException, IOException {
 			test = extentreport.createTest("Vakilsearch Test");
-			WebDriverWait wait = new WebDriverWait(driver, 30);
+		//	WebDriverWait wait = new WebDriverWait(driver, 30);
 			
 
 			driver.get("https://vakilsearch.com/");

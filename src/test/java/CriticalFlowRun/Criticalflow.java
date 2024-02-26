@@ -79,8 +79,8 @@ public class Criticalflow {
 
 	}
 
-	WebDriver driver;
-
+	
+	public WebDriver driver;
 	@BeforeSuite
 	public void Login() throws InterruptedException, AWTException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
@@ -99,11 +99,11 @@ public class Criticalflow {
 	public void Max() throws InterruptedException, AWTException {
 		// Driver d = new Driver(driver);
 		System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
 	}
-
+	
 	@BeforeClass
 	public void url() throws InterruptedException, AWTException {
 		System.out.println("Before class started");
