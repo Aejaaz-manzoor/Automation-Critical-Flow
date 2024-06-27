@@ -92,13 +92,14 @@ public class Criticalflow {
 		// ExtentSparkReporter("C:\\Users\\admit\\git\\Automation-Critical-Flow\\GRCCriticalflow\\Screenshots\\"+Date1+"\\extentreport.html");
 
 		extentreport.attachReporter(htmlReporter);
-
-	}
+ 
+	}  
 
 	@BeforeTest
 	public void Max() throws InterruptedException, AWTException {
 		// Driver d = new Driver(driver);
-		System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
+//		WebDriverManager.chromedriver().setup();
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Vakilsearch\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 

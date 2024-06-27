@@ -6,7 +6,7 @@
       <class name="CriticalFlowRun.Criticalflow">
         <methods>
           <include name="Mail"/>
-          <include name="Customercreation100" invocation-numbers="0"/>
+          <include name="Customercreation100"/>
           <include name="Max"/>
           <include name="Report"/>
           <include name="Login"/>
